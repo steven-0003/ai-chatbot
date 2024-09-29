@@ -10,8 +10,12 @@ def index_get():
 
 @app.post("/predict")
 def predict():
-    text = request.get_json().get("message")
-    #TODO: Check if text is valid
+    json = request.get_json()
+
+    if "message" not in json:
+        raise(ValueError, 'No message returned')
+    
+    text = json.get("message")
 
     response = get_response(text)
     message = {"answer": response}
