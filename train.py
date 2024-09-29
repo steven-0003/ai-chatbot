@@ -97,7 +97,7 @@ data = {
     "input_size": input_size,
     "output_size": output_size,
     "hidden_size": hidden_size,
-    "words": words,
+    "words": all_words,
     "tags": tags
 }
 
